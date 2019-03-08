@@ -1,7 +1,6 @@
 package com.example.ruben4181.newsfeed.net
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.graphics.*
 import android.os.AsyncTask
 import android.util.Log
 import android.widget.ImageView
@@ -24,7 +23,11 @@ class ImageLoader(val imgView : ImageView) : AsyncTask<String, Int, Bitmap>(){
     }
 
     fun DownloadImage(url : String) : Bitmap{
-        lateinit var bitmap : Bitmap
+        var bitmap : Bitmap = Bitmap.createBitmap(250, 300, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        val paint = Paint()
+        paint.setColor(Color.DKGRAY)
+        canvas.drawRect(0F, 0F, 250.toFloat(), 300.toFloat(), paint)
         try {
             val imgURL = URL(url)
             val conn: URLConnection = imgURL.openConnection()

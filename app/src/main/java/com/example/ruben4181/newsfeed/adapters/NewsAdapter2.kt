@@ -1,7 +1,6 @@
 package com.example.ruben4181.newsfeed.adapters
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.ruben4181.newsfeed.Noticia
 import com.example.ruben4181.newsfeed.R
-import com.example.ruben4181.newsfeed.net.ImageLoader
 import com.squareup.picasso.Picasso
 
-class NewsAdapter(val items : ArrayList<Noticia>, val dispWidth : Int) : RecyclerView.Adapter<NewsAdapter.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false)
+
+class NewsAdapter2(val items : ArrayList<Noticia>, val dispWidth : Int) : RecyclerView.Adapter<NewsAdapter2.ViewHolder>(){
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
+        val v= LayoutInflater.from(p0.context).inflate(R.layout.news_with_cardview, p0, false)
         return ViewHolder(v)
     }
 
@@ -35,8 +34,8 @@ class NewsAdapter(val items : ArrayList<Noticia>, val dispWidth : Int) : Recycle
     }
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val titleTV = itemView.findViewById<TextView>(R.id.card_news_title)
-        val abstTV = itemView.findViewById<TextView>(R.id.card_new_abs)
-        val newsImage = itemView.findViewById<ImageView>(R.id.new_imageview)
+        val titleTV = itemView.findViewById<TextView>(R.id.cardview_title)
+        val abstTV = itemView.findViewById<TextView>(R.id.cardview_abs)
+        val newsImage = itemView.findViewById<ImageView>(R.id.cardview_imageview)
     }
 }

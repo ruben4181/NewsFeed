@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.example.ruben4181.newsfeed.Noticia
 import com.example.ruben4181.newsfeed.R
 import com.squareup.picasso.Picasso
@@ -33,6 +32,6 @@ class NewsAdapter2(val items : ArrayList<Noticia>, val dispWidth : Int) : Recycl
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val titleTV = itemView.findViewById<TextView>(R.id.cardview_title)
         val abstTV = itemView.findViewById<TextView>(R.id.cardview_abs)
-        val newsImage = itemView.findViewById<ImageView>(R.id.cardview_imageview)
+        val newsImage = itemView.findViewById<ImageView>(R.id.cardview_event_imageview)
     }
 }

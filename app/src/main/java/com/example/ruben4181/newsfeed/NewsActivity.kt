@@ -13,6 +13,7 @@ class NewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
+        this.getSupportActionBar()?.setElevation(0.toFloat())
         val display = this.windowManager.defaultDisplay
         val homePagerAdapter : HomePagerAdapter = HomePagerAdapter(supportFragmentManager)
 

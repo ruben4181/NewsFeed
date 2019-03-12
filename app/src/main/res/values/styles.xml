@@ -6,8 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="AppTheme.ActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@drawable/tab_shape</item>
     </style>
     <style name="NavigationTabTextAppeareance" parent="TextAppearance.Design.Tab">
+        <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:textStyle">bold</item>
     </style>

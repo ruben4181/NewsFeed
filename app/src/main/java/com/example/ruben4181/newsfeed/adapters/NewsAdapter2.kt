@@ -27,9 +27,6 @@ class NewsAdapter2(val items : ArrayList<Noticia>, val dispWidth : Int) : Recycl
         p0.abstTV.text = items[p1].abst
         if (items[p1].URL != "") {
             Picasso.get().load(items[p1].URL).resize(dispWidth, p0.newsImage.maxHeight).centerCrop().into(p0.newsImage)
-        } else{
-            p0.newsImage.setImageBitmap(items[p1].resImg)
-
         }
     }
 

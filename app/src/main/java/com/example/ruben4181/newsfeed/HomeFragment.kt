@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
 
         val dispWidth = this.getArguments()?.getString("DISPLAY_WIDTH")
 
-        val homePagerAdapter : HomePagerAdapter = HomePagerAdapter(this.childFragmentManager)
+        val homePagerAdapter = HomePagerAdapter(this.childFragmentManager)
         val bundle = Bundle()
         bundle.putString("DISPLAY_WIDTH", dispWidth)
 

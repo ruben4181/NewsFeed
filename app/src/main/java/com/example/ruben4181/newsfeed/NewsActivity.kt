@@ -44,6 +44,7 @@ class NewsActivity : AppCompatActivity() {
     private lateinit var drawerLayout : DrawerLayout
     private lateinit var ft : FragmentTransaction
     private lateinit var fragment : Fragment
+    private val listFragments = ArrayList<Fragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +58,10 @@ class NewsActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp)
         }
 
+        listFragments.add(HomeFragment())
+        listFragments.add(SubjectsFragment())
+        listFragments.add(EventsFragment())
+
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
         val navigationView : NavigationView = findViewById(R.id.nav_view)
@@ -64,11 +69,10 @@ class NewsActivity : AppCompatActivity() {
             // set item as selected to persist highlight
             menuItem.isChecked = true
             // close drawer when item is tapped
-            drawerLayout.closeDrawers()
 
             // Handle navigation view item clicks here.
             displaySelectedScreen(menuItem.itemId)
-
+            drawerLayout.closeDrawers()
             true
         }
 
@@ -79,7 +83,9 @@ class NewsActivity : AppCompatActivity() {
         bundle.putString("DISPLAY_WIDTH", display.width.toString())
 
         ft = supportFragmentManager.beginTransaction()
+        ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left)
         ft.replace(R.id.content_frame, fragment)
+        ft.addToBackStack(null)
         ft.commit()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -95,19 +101,19 @@ class NewsActivity : AppCompatActivity() {
     fun displaySelectedScreen(item : Int){
 
         if(item==R.id.nav_menu1){
-            fragment = HomeFragment()
+            fragment = listFragments[0]
             val bundle = Bundle()
             bundle.putString("DISPLAY_WIDTH", display.width.toString())
             fragment.setArguments(bundle)
         }
         if(item==R.id.nav_menu2){
-            fragment = NewsFragment()
+            fragment = listFragments[1]
             val bundle = Bundle()
             bundle.putString("DISPLAY_WIDTH", display.width.toString())
             fragment.setArguments(bundle)
         }
         if(item==R.id.nav_menu3){
-            fragment = NewsFragment()
+            fragment = listFragments[2]
             val bundle = Bundle()
             bundle.putString("DISPLAY_WIDTH", display.width.toString())
             fragment.setArguments(bundle)

@@ -118,7 +118,5 @@ class NewsActivity : AppCompatActivity() {
             ft.replace(R.id.content_frame, fragment)
             ft.commit()
         }
-
-        drawerLayout.closeDrawer(GravityCompat.START)
     }
 }

@@ -16,29 +16,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.example.ruben4181.newsfeed.adapters.HomePagerAdapter
 
-/*
-
-        setContentView(R.layout.activity_news)
-        this.getSupportActionBar()?.setElevation(0.toFloat())
-
-        val homePagerAdapter : HomePagerAdapter = HomePagerAdapter(supportFragmentManager)
-
-        //Crear el fragment con las dimensiones necesarias
-        val bundle = Bundle()
-        bundle.putString("DISPLAY_WIDTH", display.width.toString())
-
-
-        val newsFragment = NewsFragment()
-        newsFragment.setArguments(bundle)
-
-        homePagerAdapter.addFragment(newsFragment, "Noticias")
-        homePagerAdapter.addFragment(NewsFragment(), "Eventos")
-        val viewPager : ViewPager = findViewById(R.id.home_viewpager)
-        viewPager.adapter=homePagerAdapter
-        val tabLayout : TabLayout = findViewById(R.id.tabs)
-        tabLayout.setupWithViewPager(viewPager)
-    */
-
 class NewsActivity : AppCompatActivity() {
     private lateinit var display : Display
     private lateinit var drawerLayout : DrawerLayout
